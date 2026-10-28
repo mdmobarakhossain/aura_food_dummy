@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#e23744" />
+  <title>AURA BITE | Café Billing & Orders</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">A<span>✦</span></div>
+        <div><div class="brand-name">AURA BITE</div><div class="brand-caption">FRESH FOOD · FRIENDLY VIBES</div></div>
+      </div>
+      <div class="shop-mini"><span class="status-dot"></span><span>Baligori, Newtown</span></div>
+      <nav class="nav-list">
+        <button class="nav-link active" data-view="dashboard"><span>▦</span> Dashboard</button>
+        <button class="nav-link" data-view="billing"><span>＋</span> New Bill</button>
+        <button class="nav-link" data-view="bills"><span>▤</span> Saved Bills</button>
+        <button class="nav-link" data-view="products"><span>◈</span> Menu & Products</button>
+        <button class="nav-link" data-view="orders"><span>🛍</span> Online Orders <span class="nav-pill">Link</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="side-promo"><div class="promo-icon">✦</div><b>Student Combos</b><p>Smart choices for busy campus days.</p><span>Fuel your campus life!</span></div>
+        <div class="side-contact"><span>☎</span><div><small>Call or WhatsApp</small><b>8509549177</b></div></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div><div class="eyebrow" id="pageEyebrow">YOUR CAFÉ AT A GLANCE</div><h1 id="pageTitle">Good afternoon, AURA BITE <span>✦</span></h1></div>
+        <div class="topbar-right"><div class="live-date"><span class="live-dot"></span><div><b id="currentTime">--:--</b><small id="currentDate">Loading date</small></div></div><button class="primary-btn" id="topNewBill">＋ <span>New Bill</span></button></div>
+      </header>
+
+      <section class="view active" id="dashboardView">
+        <div class="welcome-banner">
+          <div><span class="banner-kicker">FRESH FOOD, FRIENDLY VIBES</span><h2>Make every order<br><em>a little brighter.</em></h2><p>Billing, daily sales and your café menu — all in one place.</p><button class="light-btn" data-goto="billing">Create a bill <span>↗</span></button></div>
+          <div class="banner-art" aria-hidden="true"><div class="sun"></div><div class="plate"><div class="toast toast-one"></div><div class="toast toast-two"></div><div class="leaf">✦</div></div><div class="art-note">MADE FRESH<br>WITH CARE</div></div>
+          <div class="floaties" aria-hidden="true"><i>🍔</i><i>🍕</i><i>🥪</i><i>☕</i></div><div class="banner-leaf leaf-a">❧</div><div class="banner-leaf leaf-b">❧</div>
+        </div>
+        <div class="section-heading"><div><span class="eyebrow">OVERVIEW</span><h2>Your business snapshot</h2></div><span class="date-chip" id="todayChip">Today</span></div>
+        <div class="stats-grid">
+          <article class="stat-card stat-green"><div class="stat-top"><span>Today's Sales</span><span class="stat-icon">₹</span></div><strong id="todaySales">₹0</strong><small><span class="trend">↗</span> Total sales today</small><div class="stat-spark spark-green">▁ ▃ ▂ ▅ ▄ ▇ ▆</div></article>
+          <article class="stat-card"><div class="stat-top"><span>This Month</span><span class="stat-icon gold">◷</span></div><strong id="monthSales">₹0</strong><small>Sales for this month</small><div class="stat-spark spark-gold">▂ ▄ ▃ ▆ ▅ ▇ ▄</div></article>
+          <article class="stat-card"><div class="stat-top"><span>All Bills</span><span class="stat-icon lavender">▤</span></div><strong id="allBills">0</strong><small>Saved invoices</small><div class="stat-spark spark-purple">▁ ▄ ▂ ▅ ▃ ▇ ▅</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Average Bill</span><span class="stat-icon peach">↗</span></div><strong id="averageBill">₹0</strong><small>Per saved bill</small><div class="stat-spark spark-peach">▂ ▃ ▅ ▂ ▆ ▄ ▇</div></article>
+        </div>
+        <div class="split-grid">
+          <article class="panel payment-panel"><div class="panel-heading"><div><span class="eyebrow">PAYMENT MIX</span><h3>How customers paid</h3></div><span class="round-icon">◉</span></div><div class="payment-content"><div class="donut" id="paymentDonut"><div><b id="paidTotal">₹0</b><small>Total collected</small></div></div><div class="payment-legend"><div><i class="legend-dot cash"></i><span>Cash</span><b id="cashSales">₹0</b></div><div><i class="legend-dot online"></i><span>Online</span><b id="onlineSales">₹0</b></div><div><i class="legend-dot card"></i><span>Card</span><b id="cardSales">₹0</b></div></div></div></article>
+          <article class="panel quick-panel"><div class="panel-heading"><div><span class="eyebrow">QUICK ACTIONS</span><h3>What would you like to do?</h3></div></div><div class="quick-actions"><button data-goto="billing"><span class="quick-icon q-green">＋</span><span><b>Create new bill</b><small>Add items and take payment</small></span><span class="arrow">↗</span></button><button data-goto="bills"><span class="quick-icon q-gold">▤</span><span><b>Find an old bill</b><small>Search by bill or phone</small></span><span class="arrow">↗</span></button><button data-goto="products"><span class="quick-icon q-purple">◈</span><span><b>Manage menu</b><small>Add items, photos and prices</small></span><span class="arrow">↗</span></button><button data-goto="orders"><span class="quick-icon q-peach">↗</span><span><b>Share order link</b><small>Let customers order online</small></span><span class="arrow">↗</span></button></div></article>
+        </div>
+        <div class="split-grid"><article class="panel p20"><div class="panel-heading"><div><span class="eyebrow">LAST 7 DAYS</span><h3>Sales trend</h3></div><span class="round-icon">📈</span></div><div id="weekChart" class="week-chart"></div></article><article class="panel p20"><div class="panel-heading"><div><span class="eyebrow">BESTSELLERS</span><h3>Top items</h3></div><span class="round-icon">🔥</span></div><div id="topItems" class="top-items"></div></article></div>
+        <article class="panel recent-panel"><div class="panel-heading"><div><span class="eyebrow">LATEST ACTIVITY</span><h3>Recent bills</h3></div><button class="text-btn" data-goto="bills">View all bills ↗</button></div><div class="table-wrap"><table><thead><tr><th>Bill no.</th><th>Customer</th><th>Date & time</th><th>Payment</th><th>Total</th><th></th></tr></thead><tbody id="recentBillsBody"><tr><td colspan="6" class="empty-cell">Your saved bills will appear here.</td></tr></tbody></table></div></article>
+        <footer class="app-footer"><span>© 2026 AURA BITE · Fuel Your Campus Life, One Bite at a Time!</span><span>Baligori, Newtown, Kolkata 700160</span></footer>
+      </section>
+
+      <section class="view" id="billingView">
+        <div class="section-heading"><div><span class="eyebrow">COUNTER BILLING</span><h2>Create a new bill</h2><p class="section-sub">Pick items, apply an offer, choose order type and collect payment.</p></div><span class="date-chip" id="billDateChip"></span></div>
+        <div class="billing-layout">
+          <div class="menu-column">
+            <div class="menu-search"><span>⌕</span><input id="menuSearch" placeholder='Search "maggi", "sandwich", "tea"...' /><span class="shortcut">MENU</span></div>
+            <div class="offers"><button class="offer o1" data-code="AURA10"><b>10% OFF</b><small>AURA10 · up to ₹50</small></button><button class="offer o2" data-code="STUDENT5"><b>5% STUDENT</b><small>STUDENT5 · every order</small></button><button class="offer o3" data-code="FLAT20"><b>FLAT ₹20</b><small>FLAT20 · above ₹100</small></button></div>
+            <div class="chip-row" id="chipRow"></div>
+            <div id="categoryAccordion" class="food-list"></div>
+          </div>
+          <aside class="cart-panel panel">
+            <div class="cart-title"><div><span class="eyebrow">CURRENT ORDER</span><h3>Your bill <span id="cartCount" class="count-pill">0</span></h3></div><button class="icon-btn" id="clearCart" title="Clear order">↻</button></div>
+            <div class="seg" id="orderTypeSeg"><button class="on" data-t="Dine-in">🍽️ Dine-in</button><button data-t="Takeaway">🥡 Takeaway</button><button data-t="Delivery">🛵 Delivery</button></div>
+            <input class="tableno" id="tableNo" placeholder="Table / token no. (optional)" />
+            <div id="cartItems" class="cart-items"></div>
+            <div class="coupon"><input id="couponInput" placeholder="Coupon code" /><button id="couponBtn">APPLY</button></div>
+            <label class="gst"><input type="checkbox" id="gstToggle" checked /> Add 5% GST (CGST + SGST)</label>
+            <div class="bill-lines" id="billLines"></div>
+            <button class="primary-btn full-btn" id="checkoutBtn">Proceed to pay →</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="billsView">
+        <div class="section-heading"><div><span class="eyebrow">INVOICE LIBRARY</span><h2>Saved bills</h2><p class="section-sub">Search and open any saved bill, whenever you need it.</p></div><button class="primary-btn" data-goto="billing">＋ New Bill</button></div>
+        <div class="panel bills-panel"><div class="filters-row"><label class="search-field"><span>⌕</span><input id="billSearch" placeholder="Search bill number, customer or phone..." /></label><select id="paymentFilter"><option value="">All payment methods</option><option>Cash</option><option>Online</option><option>Card</option></select><select id="billDateFilter"><option value="all">All dates</option><option value="today">Today</option><option value="month">This month</option></select></div><div class="table-wrap"><table><thead><tr><th>Bill no.</th><th>Customer</th><th>Phone</th><th>Date & time</th><th>Payment</th><th>Total</th><th>Actions</th></tr></thead><tbody id="allBillsBody"><tr><td colspan="7" class="empty-cell">No bills saved yet.</td></tr></tbody></table></div></div>
+      </section>
+
+      <section class="view" id="productsView">
+        <div class="section-heading"><div><span class="eyebrow">YOUR CAFÉ, YOUR MENU</span><h2>Menu & products</h2><p class="section-sub">Add, edit, price and organise your food items.</p></div><button class="primary-btn" id="addProductBtn">＋ Add product</button></div>
+        <div class="product-toolbar panel"><label class="search-field"><span>⌕</span><input id="productSearch" placeholder="Find a product..." /></label><select id="productCategoryFilter"><option value="">All categories</option></select><span class="product-count" id="productCount">0 items</span></div>
+        <div class="product-grid" id="productGrid"></div>
+        <div class="note-box">Tip: Changes are saved in this browser on this device. For a shared multi-device store, connect this prototype to a database and hosting service.</div>
+      </section>
+
+      <section class="view" id="ordersView">
+        <div class="section-heading"><div><span class="eyebrow">ORDER FROM ANYWHERE</span><h2>Online order page</h2><p class="section-sub">Share your menu link so customers can select items and send an order request.</p></div><span class="status-badge"><i></i> Preview available</span></div>
+        <div class="order-hero"><div><span class="banner-kicker">AURA BITE · ONLINE MENU</span><h2>Your next favourite<br><em>is just a bite away.</em></h2><p>Customers can browse the menu, add items to a cart, enter contact details and prepare an order summary for WhatsApp.</p><button class="light-btn" id="openCustomerPage">Open customer order page ↗</button></div><div class="order-hero-art">🥪<span>☕</span><i>✦</i></div></div>
+        <div class="panel share-panel"><div class="share-icon">↗</div><div class="share-copy"><h3>Share your order page</h3><p>This demo opens the customer ordering view in this app. To share a public link with customers, publish these files to a web host first.</p><div class="link-preview" id="orderLinkPreview">Local preview · AURA BITE customer menu</div></div><button class="outline-btn" id="copyOrderLink">Copy page address</button></div>
+        <div class="panel order-notice"><b>How it works</b><div class="steps"><span><i>1</i> Choose food & quantities</span><span><i>2</i> Enter name, phone & address</span><span><i>3</i> Choose pickup or delivery</span><span><i>4</i> Send order summary to WhatsApp</span></div><small>Note: This front-end prototype does not receive orders in the background or process online payments. WhatsApp sending requires the customer to confirm the pre-filled message.</small></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="paymentModal">
+    <div class="modal modal-medium"><button class="modal-close" data-close="paymentModal">×</button><span class="eyebrow">FINAL STEP</span><h2>Complete this bill</h2><p class="modal-sub" id="paySummary"></p>
+      <form id="paymentForm">
+        <div class="form-grid"><label>Customer name <span>Optional</span><input id="customerName" placeholder="e.g. Rahul Das" /></label><label>Phone number <span>Optional</span><input id="customerPhone" inputmode="tel" placeholder="10-digit mobile number" maxlength="15" /></label></div>
+        <input type="hidden" id="paymentMethod" value="Cash" />
+        <div class="payopts" id="payOpts"><button type="button" class="on" data-p="Cash">💵<b>Cash</b></button><button type="button" data-p="Online">📱<b>UPI / Online</b></button><button type="button" data-p="Card">💳<b>Card</b></button></div>
+        <div class="cashbox" id="cashBox"><label>Cash received <span>Optional</span><input id="cashGiven" type="number" min="0" placeholder="₹" /></label><div id="changeDue" class="changedue"></div></div>
+        <div class="checkout-total"><span>Total payable</span><strong id="checkoutTotal">₹0</strong></div>
+        <button class="primary-btn full-btn" type="submit">Save bill & generate invoice <span>→</span></button>
+      </form>
+    </div>
+  </div>
+
+  
+<div class="modal-backdrop" id="productModal">
+    <div class="modal"><button class="modal-close" data-close="productModal">×</button><span class="eyebrow">MENU MANAGEMENT</span><h2 id="productModalTitle">Add a product</h2><p class="modal-sub">Add an item to any category. You can edit it later.</p>
+      <form id="productForm"><input type="hidden" id="editProductId" />
+        <label>Food / drink name<input id="productName" required placeholder="e.g. Paneer Sandwich" /></label>
+        <div class="form-grid"><label>Category<select id="productCategory" required></select></label><label>Price (₹)<input id="productPrice" required type="number" min="0" step="0.5" placeholder="35" /></label></div>
+        <div class="form-grid"><label>Unit / portion<input id="productUnit" placeholder="e.g. 1 pc, 2 slices, 1 plate" /></label><label>Photo URL <span>Optional</span><input id="productImage" placeholder="https://..." /></label></div>
+        <label>Or upload a photo<input id="productImageFile" type="file" accept="image/*" /></label>
+        <button class="primary-btn full-btn" type="submit">Save product <span>✓</span></button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="invoiceModal"><div class="modal invoice-modal"><button class="modal-close" data-close="invoiceModal">×</button><div id="invoiceContent"></div><div class="invoice-actions"><button class="outline-btn" id="invoiceWhatsApp">Share on WhatsApp</button><button class="primary-btn" id="printInvoice">Print invoice</button></div></div></div>
+
+  <section class="customer-page" id="customerPage">
+    <header class="customer-top"><button class="back-link" id="closeCustomerPage">← Back to café app</button><div class="brand customer-brand"><div class="brand-mark">A<span>✦</span></div><div><div class="brand-name">AURA BITE</div><div class="brand-caption">FRESH FOOD · FRIENDLY VIBES</div></div></div><a href="https://wa.me/918509549177" target="_blank" rel="noreferrer" class="customer-call">☏ WhatsApp us</a></header>
+    <div class="customer-banner"><div><span class="banner-kicker">FUEL YOUR CAMPUS LIFE, ONE BITE AT A TIME!</span><h1>Good food.<br><em>Good mood.</em></h1><p>Freshly made favourites, friendly prices.</p><span class="customer-location">⌖ Baligori, Newtown, Kolkata 700160</span></div><div class="customer-food-art">🥪<span>☕</span><i>✦</i></div></div>
+    <div class="customer-layout"><main><div class="customer-menu-head"><div><span class="eyebrow">MADE FRESH FOR YOU</span><h2>Explore our menu</h2></div><label class="search-field"><span>⌕</span><input id="customerSearch" placeholder="Search the menu..." /></label></div><div class="chip-row" id="customerChips"></div><div id="customerMenu" class="food-list"></div></main>
+      <aside class="customer-cart panel"><div class="cart-title"><div><span class="eyebrow">YOUR ORDER</span><h3>Shopping cart <span id="customerCartCount" class="count-pill">0</span></h3></div></div><div id="customerCartItems" class="cart-items"><div class="cart-empty"><span>🛍️</span><b>Your cart is empty</b><small>Add something delicious!</small></div></div><div class="cart-total"><div class="total-line"><span>Order total</span><strong id="customerCartTotal">₹0</strong></div></div><button class="primary-btn full-btn" id="customerCheckout">Continue to details →</button><small class="delivery-note">Pickup or home delivery within 2 km. Delivery availability to be confirmed by the shop.</small></aside></div>
+    <button class="cart-bar" id="cartBar"><span><b id="barCount">0 items</b><small>Tap to continue</small></span><strong id="barTotal">₹0</strong><i>View cart →</i></button>
+    <footer class="customer-footer">AURA BITE · Fresh Ingredients · Hygienic Preparation · Student-Friendly Prices · ☎ 8509549177</footer>
+  </section>
+
+  <div class="modal-backdrop" id="customerDetailsModal"><div class="modal"><button class="modal-close" data-close="customerDetailsModal">×</button><span class="eyebrow">ALMOST THERE</span><h2>Where should we prepare your order?</h2><p class="modal-sub">Review your details before sending the order request.</p><form id="customerDetailsForm">
+    <label>Your name<input id="orderCustomerName" required placeholder="Full name" /></label><div class="form-grid"><label>Phone number<input id="orderCustomerPhone" required inputmode="tel" maxlength="15" placeholder="Mobile number" /></label><label>Order type<select id="orderType"><option value="Pickup from shop">Collect from shop</option><option value="Home delivery">Home delivery</option></select></label></div>
+    <label>Delivery address <span id="addressOptional">Optional for pickup</span><textarea id="orderAddress" rows="2" placeholder="House / street / landmark"></textarea></label>
+    <label>Payment preference<select id="orderPayment"><option>Cash</option><option>Online / UPI</option><option>Card</option></select></label><label>Extra instructions <span>Optional</span><textarea id="orderNotes" rows="2" placeholder="Less spicy, call on arrival..."></textarea></label>
+    <div class="checkout-total"><span>Order total</span><strong id="customerCheckoutTotal">₹0</strong></div><button class="primary-btn full-btn" type="submit">Prepare WhatsApp order ↗</button>
+  </form></div></div>
+  <div id="toast" class="toast-message"></div>
+  <script src="script.js"></script>
+</body>
+</html>
